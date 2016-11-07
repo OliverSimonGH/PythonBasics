@@ -36,17 +36,14 @@ def main():
     #This will shuffle the cards by putting the cards in a row 1 at a time row by row and not column by column.
     def shuffle():
         while len(middle_deck) > 0:
-            card = middle_deck[0]
-            row_one.append(card)
-            middle_deck.remove(card)
+            row_one.append(middle_deck[0])
+            middle_deck.remove(middle_deck[0])
 
-            card = middle_deck[0]
-            row_two.append(card)
-            middle_deck.remove(card)
+            row_two.append(middle_deck[0])
+            middle_deck.remove(middle_deck[0])
 
-            card = middle_deck[0]
-            row_three.append(card)
-            middle_deck.remove(card)
+            row_three.append(middle_deck[0])
+            middle_deck.remove(middle_deck[0])
         print("\nRow one: {} \nRow two: {} \nRow three: {}".format(row_one, row_two, row_three))
 
     #creating a deck of cards.
@@ -61,18 +58,11 @@ def main():
         card_list_52.remove(card)
 
     #Creates three different rows from the deck of 21 cards, these rows of 7 are used for the magic trick.
-    while len(card_list_21) > 0:
-        random_card = random.choice(card_list_21)
-        row_one.append(random_card)
-        card_list_21.remove(random_card)
+    while len(row_three) != 7:
+        row_one.extend(card_list_21[:7])
+        row_two.extend(card_list_21[7:14])
+        row_three.extend(card_list_21[14:21])
 
-        random_card = random.choice(card_list_21)
-        row_two.append(random_card)
-        card_list_21.remove(random_card)
-
-        random_card = random.choice(card_list_21)
-        row_three.append(random_card)
-        card_list_21.remove(random_card)
     print("Row one: {} \nRow two: {} \nRow three: {}".format(row_one, row_two, row_three))
 
     #Calling the functions to play the game.
@@ -103,6 +93,7 @@ clear_screen()
 main()
 
 #references
-#rubenvb (2015) How to clear python interpreter console. Available at: http://stackoverflow.com/questions/517970/how-to-clear-python-interpreter-console (Accessed: 2 November 2016).
-#2016, Python Official Docs (no date) Data structures — python 3.5.2 documentation. Available at: https://docs.python.org/3/tutorial/datastructures.html (Accessed: 1 November 2016).
-#What is the syntax to insert one list into another list in python? (2010) Available at: http://stackoverflow.com/questions/3748063/what-is-the-syntax-to-insert-one-list-into-another-list-in-python (Accessed: 3 November 2016).
+# rubenvb (2015) How to clear python interpreter console. Available at: http://stackoverflow.com/questions/517970/how-to-clear-python-interpreter-console (Accessed: 2 November 2016).
+# 2016, Python Official Docs (no date) Data structures — python 3.5.2 documentation. Available at: https://docs.python.org/3/tutorial/datastructures.html (Accessed: 1 November 2016).
+# What is the syntax to insert one list into another list in python? (2010) Available at: http://stackoverflow.com/questions/3748063/what-is-the-syntax-to-insert-one-list-into-another-list-in-python (Accessed: 3 November 2016).
+# Explain python’s slice notation (2016) Available at: http://stackoverflow.com/questions/509211/explain-pythons-slice-notation (Accessed: 7 November 2016).

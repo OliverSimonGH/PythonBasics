@@ -96,7 +96,7 @@ def main():
     clear_row()
     shuffle()
 
-    # Put the cards in the middle_deck list so they the eleventh card can be chosen.
+    # Put the cards in the middle_deck list so the eleventh card can be chosen.
     pick_a_row()
 
     #grab the the eleventh card in the middle deck.
